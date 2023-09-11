@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+
+extern char *  pop();
+extern void push(char *);
+
+int main(int argc, char * argv[])
+{
+  int ch, tagIndex = 0, startTAG = 0, endTAG = 0;
+  char tag[101];
+
+  while ((ch = getchar()) != EOF) {
+    if (!(isalpha(ch) || ch == '>' || ch == '<' || ch == '/'))
+      continue;
+    
+    if (ch == '<') {
+      startTAG = 1;
+      endTAG = 0;
+      tagIndex = 0;
+    } else if (ch == '>') {
+      tag[tagIndex] = '\0';
+      if (endTAG) {
+        char *startTagIdentity = pop();
+        if (startTagIdentity == NULL || strncmp(tag, startTagIdentity, 101) != 0) {
+          printf("The XML expression is invalid.\n");
+          return 1;
+        }
+      } else {
+        push(strdup(tag));
+      }
+      startTAG = 0;
+      endTAG = 0;
+    } else if (ch == '/' && startTAG) {
+      endTAG = 1;
+    } else if (isalpha(ch)) {
+      tag[tagIndex++] = ch;
+    }
+  }
+
+  if (isEmpty()) {
+    printf("THe XML expression is valid.\n");
+  } else {
+    printf("The XML expression is invalid.\n");
+  }
+
+  return(0);
+}

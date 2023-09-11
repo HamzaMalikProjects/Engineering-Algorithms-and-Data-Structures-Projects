@@ -1,0 +1,104 @@
+Readme File For COE428 Lab 3: Sorting
+
+Author: Hamza Malik
+Student # 501112545
+Submit Date: Thurs July 27, 2023
+Lab Due Date: Thurs July 27, 2023
+
+
+Question 1.
+A brief summary of what you accomplished and what (if any) parts you did not complete or bugs that you are aware of but have not fixed.
+
+Answer 1. 
+Basically had to implement an Insertion Sort and Merge Sort into the program 
+The lab worked correctly didnt see any bugs for the sorting algorithms Insertion and Merge Sort
+
+Brief overview of that Insertion Sort and Merge Sort are:
+Insertion Sort is a sorting algorithm that operates by dividing the input array into two sections: a sorted section and an unsorted section. The algorithm iterates through the unsorted section, taking each element and inserting it into its proper position within the sorted section. This process continues until the entire array is sorted.
+
+Merge Sort is a divide-and-conquer sorting algorithm. It starts by dividing the input array into two equal halves, and then recursively sorts each half. Afterward, it merges the sorted halves back together to produce the final sorted array. Merge Sort's performance is characterized by a number of comparisons and copies that are proportional to the number of items in the array and the logarithm of its size. As a result, the number of comparisons and copies in Merge Sort is O(n log n).
+
+
+Question 2.Analysis (including equations for number of moves, swaps and compares as a function of n) for the best-, average- and worst-case behaviors of InsertionSort and MergeSort,
+
+Answer 2.
+For Insertion Sort, the following analysis is completed:
+
+I used the following imput values: 10, 4 , 1 , 0 to check the number of moves, swaps and compares as a function of n and created an equation based off it.
+
+Worst-case: 10, 4 , 1 , 0
+    Comparisons: 6
+    Swaps: 6
+    Copy operations: 4
+    
+    Equation for worstCase:  
+    Comparisons: (n^2 - n) / 2 
+    Swaps: (n^2 - n) / 2 
+    Copy operations: n
+    
+
+Best-case: 0 , 1 , 4 , 10
+    Comparisons: 3
+    Swaps: 0    
+    Copy operations: 4
+    Equation for it n - 1
+
+    Equation for BestCase:  
+    Comparisons: n-1
+    Swaps: 0
+    Copy operations: n
+
+Average-case: 0 , 4 , 1 , 20
+    Comparisons: 4
+    Swaps: 1
+    Copy operations: 4
+
+    Equation for Average-Case:  
+    Comparisons: {(n^2 - n) / 2 + n-1 / 2}
+    Swaps: (n+n) / 2
+    Copy operations: [(n^2 - n) / 2 + n-1 / 2}]
+
+Sorted out output:
+0, 1, 4, 10 
+
+For MergeSort, the following analysis is completed:
+
+I used the following imput values: -7, 10 , 4 , 0 to check the number of moves, swaps and compares as a function of n and created an equation based off it.
+Since its a recurrence relation theres techinally no best or worst case so equation is technically nlog 
+Worst-case: 10, 4 , 0 , -7
+    Comparisons: 4
+    Swaps: 8
+    Copy operations: 4
+    Equation for it 
+
+    Equation for worstCase:  
+    Comparisons: nlogn
+    Swaps: 0
+    Copy operations: 2nlogn
+    
+Best-case: -7 , 0 , 4 , 10
+    Comparisons: 3
+    Swaps: 0    
+    Copy operations: 4
+    Equation for it 
+
+    Equation for BestCase:  
+   Comparisons: nlogn
+    Swaps: 0
+    Copy operations: 2nlogn
+
+Average-case: -7 , 4 , 0 , 10 
+    Comparisons: 5
+    Swaps: 8
+    Copy operations: 3
+    Equation for it 
+
+    Equation for Average-Case:  
+    Comparisons: nlogn
+    Swaps: 0
+    Copy operations: 2nlogn
+
+
+
+
+

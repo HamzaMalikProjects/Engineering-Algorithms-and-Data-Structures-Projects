@@ -1,0 +1,68 @@
+Readme File For COE428 Lab 4: State Machine
+
+Author: Hamza Malik
+Student # 501112545
+Submit Date: Thurs Aug 9, 2023
+Lab Due Date: Thurs Aug 10, 2023
+
+
+
+Hello 
+
+Your personalized state machine description for Lab 4 (coe 428) follows:
+
+A F G
+B E C
+C C A
+D G E
+E B H
+F H D
+G F B
+H C D
+
+Your starting state is: A 
+
+   Good luck!
+_______________________________________________________________________________________________________________________________
+
+The code introduces two structures: State and StateMachine, forming the backbone of a state machine architecture.
+
+A State encapsulates:
+
+A distinct name.
+A tally of linked subsequent states.
+A pointer array leading to these states.
+Meanwhile, a StateMachine is distinguished by:
+
+Its prevailing state.
+The aggregate of states within it.
+Pointers array to said states.
+Functionalities offered by this framework include:
+
+Modifying the active state of a state machine.
+Crafting new states and state machines.
+Incorporating states.
+Searching for a state using its name.
+Adjusting the present states of level machines.
+Detecting and eliminating non-reachable states, referred to as 'junk' in the codebase.
+Digging deeper into the functions:
+
+-> create_state: Sets a state's name, reserves its memory, and assigns its linked state count as zero.
+
+-> add_next_state: Introduces a fresh state into a designated state's subsequent state array.
+
+-> create_state_machine: Resets the prevailing state to NULL, enumerates its state count as zero, and allots memory.
+
+-> add_state: Expands a state machine's state array with an additional state.
+
+-> find_state: Locates a state by its name in a state machine and returns its address.
+
+-> change_state_command: Shifts a state machine's active state to another provided by its name.
+
+-> identify_garbage_states_command: Identifies and tallies non-accessible states using a tailored depth-first exploration.
+
+-> delete_state_command: Erases chosen states, reorganizes the subsequent state array, and refreshes indices after releasing their memory.
+
+
+
+
